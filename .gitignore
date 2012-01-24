@@ -1,0 +1,6 @@
+*.pyc
+DS_STORE
+local_settings.py
+*.tmproj
+static/
+!page/static/
