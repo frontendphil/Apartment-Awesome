@@ -9,29 +9,11 @@
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/style.css">
 
         <script type="text/javascript" src="{{ STATIC_URL }}/script/prototype.js"></script>
-        
-        <script type="text/javascript">
-            var viewport = document.viewport;
-        
-            var positionBlackboard = function(blackboard) {
-                blackboard.setStyle({
-                    marginLeft: (viewport.getWidth() / 2) - 680 + "px"  // magic numbers :)
-                });
-            };
-        
-            $(document).observe("dom:loaded", function() {
-                var blackboard = $("blackboard");
-                positionBlackboard(blackboard);
-                
-                Event.observe(window, "resize", positionBlackboard.bind(this, blackboard));
-            });
-            
-        </script>
-
+        {% block scripts %}{% endblock %}
     </head>
     <body>
+        {% block content %}{% endblock %}
         <div id="blackboard" class="x-blackboard"></div>
-        <div class="x-hirsch"></div>
-        <div class="x-typo"></div>
+        
     </body>
 </html>

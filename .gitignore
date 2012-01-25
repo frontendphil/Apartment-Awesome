@@ -1,6 +1,8 @@
 *.pyc
-DS_STORE
+.DS_STORE
 local_settings.py
 *.tmproj
 static/
 !page/static/
+page/static/images/events
+db

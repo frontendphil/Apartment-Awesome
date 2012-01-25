@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+    <script type="text/javascript" src="{{ STATIC_URL }}/script/const.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/script/blackboard.js"></script>
+    
+    <script type="text/javascript">
+        Awesome.const.STATIC = "{{ STATIC_URL }}";
+
+        var viewport = document.viewport;
+        
+        var blackboard = new Awesome.plugins.Blackboard({
+            date: "{{ date }}",
+            position: "center"
+        });
+                
+        Event.observe(window, "resize", function() {
+            blackboard.centerHorizontally();
+        });
+        
+    </script>
+{% endblock %}
