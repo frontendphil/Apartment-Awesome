@@ -2,6 +2,7 @@
 
 {% block scripts %}
     <script type="text/javascript" src="{{ STATIC_URL }}/script/const.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}/script/utils.js"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}/script/blackboard.js"></script>
     
     <script type="text/javascript">
@@ -9,14 +10,42 @@
 
         var viewport = document.viewport;
         
-        var blackboard = new Awesome.plugins.Blackboard({
-            date: "{{ date }}",
-            position: "center"
-        });
-                
-        Event.observe(window, "resize", function() {
-            blackboard.centerHorizontally();
-        });
+        {% if event %}
+        
+            var blackboard = new Awesome.plugins.Blackboard({
+                date: "{{ date }}"
+            });
+        
+            $(document).observe("dom:loaded", function() {
+                Awesome.utils.Linker.register([{
+                    id: "facebook",
+                    href: "https://www.facebook.com/pages/Apartment-Awesome/303269139723608"
+                }, {
+                    id: "twitter",
+                    href: "https://twitter.com/aptmtawesome"
+                }]);
+            });
+        
+        {% endif %}
         
     </script>
+{% endblock %}
+
+{% block content %}
+    
+    <div class="x-heading"></div>
+    
+    <div class="x-links">
+        <div id="twitter" class="x-link-twitter"></div>
+        <div id="facebook" class="x-link-facebook"></div>
+    </div>
+    
+    <div class="x-board-wrap">
+        <div id="blackboard" class="x-blackboard"></div>
+    </div>
+    
+    <div class="x-hirsch-wrap">
+        <div class="x-hirsch-small"></div>
+    </div>
+
 {% endblock %}

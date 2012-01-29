@@ -6,3 +6,4 @@ static/
 !page/static/
 page/static/images/events
 db
+*.psd

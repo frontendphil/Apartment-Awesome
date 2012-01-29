@@ -10,10 +10,6 @@ if(!Awesome.plugins) { Awesome.plugins = {}; }
            
            $(document).observe("dom:loaded", function() {
                that.handleLoad(attr.date);
-               
-               if(attr.position === "center") {
-                   that.centerHorizontally()
-               }
            });
        },
        
@@ -22,19 +18,6 @@ if(!Awesome.plugins) { Awesome.plugins = {}; }
            this.dom.setStyle({
                backgroundImage: "url(" + Awesome.const.STATIC + "/images/events/" + date + ".png)"
            });
-       },
-       
-       moveTo: function(x, y) {
-           this.dom.setStyle({
-               marginLeft: x + "px",
-               marginTop: y + "px"
-           });
-       },
-       
-       centerHorizontally: function() {
-           var viewport = document.viewport;
-           
-           this.moveTo((viewport.getWidth() / 2) - (this.dom.getWidth() / 2), 0);
        }
         
     });

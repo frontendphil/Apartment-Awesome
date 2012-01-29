@@ -23,6 +23,24 @@ body {
     margin-top: 50px;
 }
 
+.x-hirsch-wrap {
+    position: absolute;
+    
+    width: 268px;
+    height: 343px;
+    
+    margin-left: 50%;
+}
+
+.x-hirsch-small {
+    width: 268px;
+    height: 343px;
+    
+    background-image: url(../images/hirsch-tiny.png);
+    
+    margin-left: -500px;
+}
+
 .x-typo {
     position: absolute;
     
@@ -36,11 +54,73 @@ body {
     margin-top: 700px;
 }
 
-.x-blackboard {
+.x-board-wrap {
     position: absolute;
+    
+    pointer-events: none;
+    
+    width: 636px;
+    height: 499px;
+    
+    margin-left: 50%;
+}
+
+.x-blackboard {
+    margin-left: -318px;
     
     width: 636px;
     height: 499px;
     
     background-repeat: no-repeat;
+}
+
+.x-heading {
+    width: 100%;
+    height: 73px;
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    background-image: url(../images/upcoming-events.png);
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+}
+
+.x-links {
+    position:absolute;
+    
+    width: 518px;
+    height: 143px;
+    
+    margin-left: 50%;
+    margin-top: 430px;
+}
+
+.x-link-facebook {    
+    width: 255px;
+    height: 121px;
+    
+    background-image: url(../images/facebook.png);
+    background-repeat: no-repeat;
+    
+    margin-left: -190px;
+    margin-top: -90px;
+}
+
+.x-link-facebook:hover {
+    cursor: pointer;
+}
+
+.x-link-twitter {    
+    width: 263px;
+    height: 143px;
+    
+    background-image: url(../images/twitter.png);
+    background-repeat: no-repeat;
+    
+    margin-left: 30px;
+}
+
+.x-link-twitter:hover {
+    cursor: pointer;
 }
